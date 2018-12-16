@@ -4,6 +4,7 @@ from wifi import Wifi
 from machine import Pin
 
 wifi = Wifi()
+
 wifi.connect()
 renderer = Renderer('templates')
 app = picoweb.WebApp('onAir')

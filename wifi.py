@@ -14,6 +14,14 @@ class Wifi:
         self.station = network.WLAN(settings.mode)
 
     def connect(self):
+        if settings.mode == network.AP_IF:
+            self.create_ap()
+        else:
+            self.create_sta()
+
+    def create_sta(self):
+        if settings.mode == network.AP_IF:
+            raise ConnectionError('Invalid mode')
 
         if self.station.isconnected():
             print("Already connected")
@@ -28,6 +36,16 @@ class Wifi:
         self.connected=True
         config = self.station.ifconfig()
         print(config)
+        self.currentIp = config[0]
+
+    def create_ap(self):
+        if settings.mode == network.STA_IF:
+            raise ConnectionError('Invalid Mode')
+        self.station.active(True)
+        self.station.config(essid=settings.wifi_ssid, password=settings.wifi_password, authmode=3)
+        config = self.station.ifconfig()
+        print(config)
+        self.connected=True
         self.currentIp = config[0]
 
     def getcurrent_ip(self):
