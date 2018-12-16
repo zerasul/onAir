@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            margin:0px;
+        }
+        span#radio{
+            font-size:150px;
+            margin-left: 0.05em;
+        }
+        header{
+            background: #0087ff;
+            color:white;
+        }
+        header h1{
+        margin-top: 0px;
+        padding: 0.5em;
+        }
+        h1{
+            margin: 0.2em;
+        }
+        footer{
+           height:1.5em;
+           font-size: 1em;
+           margin: 1em 0.5em 1em 0.5em ;
+        }
+        div#content{
+            padding: 1em;
+            max-width: 65em;
+            margin: 3em;
+            border: 2px solid #00000080;
+            border-radius: 20px;
+        }
+        #content p{
+            text-align: center;
+        }
+        h2#subtitle{
+            margin: 1em;
+        }
+        #buttons{
+            display: table;
+            padding: 1em;
+            padding-bottom: 3em;
+            padding-left: 20%;
+        }
+        #buttons form{
+            float: left;
+        }
+        #buttons input{
+            margin: 1em;
+            max-width: 13em;
+            font-weight: bold;
+            font-size:4em;
+        }
+        #frmon input{
+            background: #50bf50;
+        }
+        #frmoff input{
+            background: #db3030;
+        }
+    </style>
+    <title>RadioUniversidad de Almeria -  Señal de Grabando</title>
+</head>
+<body>
+<header>
+    <h1>Radio Universidad de Almería</h1>
+</header>
+<h1>Bienvenido a la Radio Universidad de Almería</h1>
+<div id="content">
+    <h2 id="subtitle">Para iniciar la señal de Grabando... pulsa en el botón correspondiente...</h2>
+    <p><span id="radio" style="">&#128251;</span></p>
+    <div id="buttons">
+        <form action="/recording" method="post" id="frmon">
+            <input type="submit" value="ON" name="on"></form>
+        <form action="/recording" method="post" id="frmoff">
+            <input type="submit" value="OFF" name="on">
+        </form>
+    </div>
+    </div>
+<footer><strong>&copy; 2019 Equipo de Ceros Y Unos. Radio Universidad de Almería.</strong></footer>
+</body>
+</html>
